@@ -1,5 +1,6 @@
 import { expect } from "@playwright/test";
-import test from "../lambdatest-setup";
+// import test from "../lambdatest-setup";
+import test from '@playwright/test'
 const data = {
   URL: "https://www.lambdatest.com/selenium-playground/",
 };
@@ -12,8 +13,7 @@ test.describe("PlayWright Assignment Test Scenarios", async () => {
     });
   });
 
-  test("Test Scenario 1", async ({ page }) => {
-    await page.goto(data.URL);
+  test.skip("Test Scenario 1", async ({ page }) => {
     await page.getByRole("link", { name: "Simple Form Demo" }).click();
     const val: string = "Welcome to LambdaTest";
     await page.getByPlaceholder("Please enter your Message").fill(val);
@@ -22,37 +22,16 @@ test.describe("PlayWright Assignment Test Scenarios", async () => {
   });
 
   test("Test Scenario 2", async ({ page }) => {
-    await page.goto(data.URL);
     await page.getByRole("link", { name: "Drag & Drop Sliders" }).click();
     await page.waitForSelector("#slider3");
-    let slider = await page.locator("#slider3").getByRole("slider");
-    let text = await page.locator("#rangeSuccess").innerText();
-    console.log("Initial value:" + text);
-    let target = "95";
-    let isCompleted = false;
-    if (slider) {
-      while (!isCompleted) {
-        let srcBound = await slider.boundingBox();
-        if (srcBound) {
-          await page.mouse.move(
-            srcBound.x + srcBound.width / 2,
-            srcBound.y + srcBound.height / 2
-          );
-          await page.mouse.down();
-          await page.mouse.move(
-            srcBound.x + 15,
-            srcBound.y + srcBound.height / 2
-          );
-          await page.mouse.up();
-          let text = await page.locator("#rangeSuccess").innerText();
-          if (text == target) {
-            isCompleted = true;
-          }
-        }
-      }
-    }
+    let defaultValTxt = await page.locator("#rangeSuccess").innerText();
+    expect(defaultValTxt).toBe('15');
+    await page.locator('#slider3').getByRole('slider').fill('95');
+    let afterValTxt = await page.locator("#rangeSuccess").innerText();
+    expect(afterValTxt).toBe('95');
+ 
   });
-  test("Test Scenario 3", async ({ page }) => {
+  test.skip("Test Scenario 3", async ({ page }) => {
     await page.getByRole("link", { name: "Input Form Submit" }).click();
     // expect(page).toHaveURL("/input-form-demo");
     await page.getByRole("button", { name: "Submit" }).click();

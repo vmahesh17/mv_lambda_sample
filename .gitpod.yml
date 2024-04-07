@@ -6,6 +6,10 @@
 
 tasks:
   - init: npm install
+  - command: |
+      npx playwright install
+      npx playwright install-deps
+
 
 
 
