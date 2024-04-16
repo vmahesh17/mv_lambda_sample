@@ -30,12 +30,12 @@ const config: PlaywrightTestConfig = {
     //     ...devices["iPhone 12 Pro Max"],
     //   },
     // },
-    // {
-    //   name: "pw-firefox:latest:Windows 11@lambdatest",
-    //   use: {
-    //     viewport: { width: 1280, height: 720 },
-    //   },
-    // },
+    {
+      name: "pw-firefox:latest:Windows 11@lambdatest",
+      use: {
+        viewport: { width: 1280, height: 720 },
+      },
+    },
     // {
     //   name: "pw-webkit:latest:Windows 10@lambdatest",
     //   use: {
