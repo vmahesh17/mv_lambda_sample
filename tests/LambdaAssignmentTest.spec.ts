@@ -1,6 +1,6 @@
 import { expect } from "@playwright/test";
-// import test from "../lambdatest-setup";
-import test from '@playwright/test'
+import test from "../lambdatest-setup";
+// import test from '@playwright/test'
 const data = {
   URL: "https://www.lambdatest.com/selenium-playground/",
 };
@@ -13,7 +13,7 @@ test.describe("PlayWright Assignment Test Scenarios", async () => {
     });
   });
 
-  test.skip("Test Scenario 1", async ({ page }) => {
+  test("Test Scenario 1", async ({ page }) => {
     await page.getByRole("link", { name: "Simple Form Demo" }).click();
     const val: string = "Welcome to LambdaTest";
     await page.getByPlaceholder("Please enter your Message").fill(val);
@@ -31,9 +31,8 @@ test.describe("PlayWright Assignment Test Scenarios", async () => {
     expect(afterValTxt).toBe('95');
  
   });
-  test.skip("Test Scenario 3", async ({ page }) => {
+  test("Test Scenario 3", async ({ page }) => {
     await page.getByRole("link", { name: "Input Form Submit" }).click();
-    // expect(page).toHaveURL("/input-form-demo");
     await page.getByRole("button", { name: "Submit" }).click();
     expect(page.getByText("Please fill in this field.")).toBeVisible();
     await page
