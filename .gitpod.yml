@@ -4,12 +4,14 @@
 
 # Learn more from ready-to-use templates: https://www.gitpod.io/docs/introduction/getting-started/quickstart
 
-tasks:
-  - init: npm install
-  - command: npx playwright install
-             npx playwright install-deps
-
-
+ tasks:
+  - name: Install npm
+    command: npm install
+  - name: Install PW
+    command: npx playwright install
+  - name:  install dependencies
+    command: npx playwright install-deps
+  
 
 
 
