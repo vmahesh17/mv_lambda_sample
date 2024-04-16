@@ -46,7 +46,7 @@ test.describe("PlayWright Assignment Test Scenarios", async () => {
   test("Test Scenario 3", async ({ page }) => {
     await page.getByRole("link", { name: "Input Form Submit" }).click();
     await page.getByRole("button", { name: "Submit" }).click();
-    await page.getByPlaceholder("Name", { exact: true }).fill("Test Mv");
+    await page.getByPlaceholder("Name", { exact: true }).fill(data.USER_NAME);
     await page.getByPlaceholder("Email", { exact: true }).fill(data.EMAIL);
     await page.getByPlaceholder("Password").fill(data.PASSWORD);
     await page.getByPlaceholder("Company").fill(data.COMPANY);
