@@ -13,7 +13,7 @@ const capabilities = {
   browserVersion: "latest",
   "LT:Options": {
     platform: "Windows 10",
-    build: "Mahesh Vemula Playwright TS Build",
+    build: "Imran Playwright TS Build",
     name: "Playwright Test",
     user: process.env.LT_USERNAME,
     accessKey: process.env.LT_ACCESS_KEY,
