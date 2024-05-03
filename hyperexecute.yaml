@@ -1,0 +1,14 @@
+---
+version: "0.1"
+matrix:
+  os: [win]
+  methods: ["tests/LambdaAssignmentTest.spec.ts"]
+runson: ${matrix.os}
+pre:
+  - yarn install
+
+cacheKey: '{{ checksum "yarn.lock" }}'
+cacheDirectories:
+  - node_modules
+testSuites:
+  - yarn playwright test --config=./playwright.config.ts
