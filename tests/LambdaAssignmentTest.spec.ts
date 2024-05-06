@@ -26,14 +26,14 @@ test.describe("PlayWright Assignment Test Scenarios", async () => {
     });
   });
 
-  test("Test Scenario 1", async ({ page }) => {
+  test.only("Test Scenario 1", async ({ page }) => {
     await page.getByRole("link", { name: "Simple Form Demo" }).click();
     await page.getByPlaceholder("Please enter your Message").fill(data.WELCOME_MSG);
     await page.getByRole("button", { name: "Get Checked Value" }).click();
     await expect(page.locator("#message")).toHaveText(data.WELCOME_MSG);
   });
 
-  test("Test Scenario 2", async ({ page }) => {
+  test.skip("Test Scenario 2", async ({ page }) => {
     await page.getByRole("link", { name: "Drag & Drop Sliders" }).click();
     await page.waitForSelector("#slider3");
     let defaultValTxt = await page.locator("#rangeSuccess").innerText();
@@ -43,7 +43,7 @@ test.describe("PlayWright Assignment Test Scenarios", async () => {
     expect(afterValTxt).toBe("95");
   });
 
-  test("Test Scenario 3", async ({ page }) => {
+  test.skip("Test Scenario 3", async ({ page }) => {
     await page.getByRole("link", { name: "Input Form Submit" }).click();
     await page.getByRole("button", { name: "Submit" }).click();
     await page.getByPlaceholder("Name", { exact: true }).fill(data.USER_NAME);

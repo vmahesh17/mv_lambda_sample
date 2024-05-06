@@ -1,0 +1,25 @@
+---
+version: '0.1'
+matrix:
+  os: [win]
+  files: ["LambdaAssignmentTest.spec.ts"]
+runson: ${matrix.os}
+pre:
+  - npm install
+  - npx playwright install
+cacheKey: '{{ checksum "package-lock.json" }}'
+cacheDirectories:
+  - node_modules
+testSuites:
+  - npm test -- $files
+
+jobLabel: [playwright-mv, win, matrix]
+
+mergeArtifacts: true
+
+report: true
+partialReports:
+ location: Report
+ type: html
+ frameworkName: extent
+captureScreenRecordingForScenarios: true

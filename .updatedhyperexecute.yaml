@@ -1,0 +1,123 @@
+version: "0.1"
+user: vemula.mahesh
+key: kJ3LzkX4aU6EN212myd3eBpoqOZDuiooLxmi9sHIoZDwFnEkG2
+testSuites: []
+pre: [npm install, npx playwright install]
+preDirectives:
+    commands: [npm install, npx playwright install]
+    maxRetries: 0
+    shell: ""
+    workingDirectory: ""
+postDirectives:
+    commands: []
+    shell: ""
+    workingDirectory: ""
+jobLabel:
+    - playwright-mv
+    - win
+    - autosplit
+runson: win
+autosplit: true
+concurrency: 1
+testDiscovery:
+    autosubset: true
+    command: grep -lr 'test' tests
+    mode: dynamic
+    type: raw
+testRunnerCommand: npm test -- $test
+globalTimeout: 90
+tunnelOpts:
+    testsPerTunnel: 10
+testSuiteTimeout: 90
+testSuiteStep: 90
+cacheDirectories:
+    - node_modules
+cacheKey: '{{ checksum "package-lock.json" }}'
+maxRetries: 1
+jobID: f3ad997b-7b60-4ffe-816f-c6d0c409ddf6
+mergeArtifacts: true
+codeDirectory: mv_lambda_sample
+report: true
+partialReports:
+    type: html
+    location: Report
+    frameworkName: ""
+    email:
+        to: []
+        metaInfo: []
+        linkValidity: 0
+    configPath: ""
+framework:
+    name: ""
+    flags: []
+    discoveryFlags: []
+    discoveryType: ""
+    runnerFlags: []
+    workingDirectory: ""
+    isTestNGXMLSuite: false
+    defaultReports: false
+    args:
+        appPath: ""
+        testSuitePath: ""
+        xcTestPlanPath: ""
+        shards:
+            mappings: []
+        filters:
+            attributes: []
+        devices: []
+        deviceSelectionStrategy: ""
+        appId: ""
+        testSuiteAppId: ""
+        xcTestPlanId: ""
+        buildName: ""
+        skipXMLOnRun: false
+        skipInstall: false
+        disableReleaseDevice: false
+        platformName: ""
+        isRealMobile: false
+        avoidAppLaunch: false
+        queueTimeout: 0
+        uninstallPreviousBuild: false
+        language: ""
+        locale: ""
+        preservedDevice: false
+        fixedIP: ""
+        resignApp: true
+        minorOsVersion: false
+        playwrightRD: false
+        mobileDC: null
+        skipUninstallPreviousBuild: false
+        isVirtualDevice: false
+    additional_args: null
+    licenseKey: ""
+    userdefinediscovery: false
+    toscaArgs: null
+    version: ""
+    downloadURL: ""
+    baseCommand: ""
+cypress: false
+betaFeature:
+    setPartiallyCompletedAsCompleted: false
+testType: playwright
+combineTasksInMatrixMode: false
+captureScreenRecordingForScenarios: true
+maxRetriesPreSteps: 0
+triggerMode: false
+sourcePayload:
+    verifySSL: true
+collectLocalGitData: true
+dynamicAllocation: false
+appium: false
+platformConfig: null
+differentialUpload:
+    enabled: false
+    ttlHours: null
+    forcedDisabled: false
+project:
+    id: ""
+    name: ""
+    type: default
+meta: {}
+alwaysRunPostSteps: false
+errorCategorizedOnFailureOnly: false
+storageType: ""

@@ -12,7 +12,7 @@ const capabilities = {
   browserName: "Chrome", // Browsers allowed: `Chrome`, `MicrosoftEdge`, `pw-chromium`, `pw-firefox` and `pw-webkit`
   browserVersion: "latest",
   "LT:Options": {
-    platform: "Windows 10",
+    platform: process.env.HYPEREXECUTE_PLATFORM,
     build: "Mahesh Vemula Playwright TS Build",
     name: "Playwright Test",
     user: process.env.LT_USERNAME,
