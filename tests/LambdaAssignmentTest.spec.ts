@@ -1,22 +1,7 @@
 import { expect } from "@playwright/test";
-import test from "../lambdatest-setup";
- // import test from '@playwright/test'
-const data = {
-  URL: "https://www.lambdatest.com/selenium-playground/",
-  WELCOME_MSG: "Welcome to LambdaTest",
-  USER_NAME: "Mahesh Vemula",
-  EMAIL: "Testmv@yopmail.com",
-  PASSWORD: "Test@123",
-  COMPANY: "MV company",
-  WEBSITE: "www.mv.com",
-  COUNTRY: "United States",
-  CITY: "Texas",
-  ADDRESS1: "Street line1",
-  ADDRESS2: "Beside Walmart",
-  STATE: "Texas",
-  ZIP: "73301",
-  SUCCESS_MSG: "Thanks for contacting us, we will get back to you shortly.",
-};
+// import test from "../lambdatest-setup";
+import test from '@playwright/test'
+import {data} from '../data.json'
 
 test.describe("PlayWright Assignment Test Scenarios", async () => {
   test.beforeEach(async ({ page }) => {
@@ -26,14 +11,14 @@ test.describe("PlayWright Assignment Test Scenarios", async () => {
     });
   });
 
-  test.only("Test Scenario 1", async ({ page }) => {
+  test("Test Scenario 1", async ({ page }) => {
     await page.getByRole("link", { name: "Simple Form Demo" }).click();
     await page.getByPlaceholder("Please enter your Message").fill(data.WELCOME_MSG);
     await page.getByRole("button", { name: "Get Checked Value" }).click();
     await expect(page.locator("#message")).toHaveText(data.WELCOME_MSG);
   });
 
-  test.skip("Test Scenario 2", async ({ page }) => {
+  test("Test Scenario 2", async ({ page }) => {
     await page.getByRole("link", { name: "Drag & Drop Sliders" }).click();
     await page.waitForSelector("#slider3");
     let defaultValTxt = await page.locator("#rangeSuccess").innerText();
@@ -43,7 +28,7 @@ test.describe("PlayWright Assignment Test Scenarios", async () => {
     expect(afterValTxt).toBe("95");
   });
 
-  test.skip("Test Scenario 3", async ({ page }) => {
+  test("Test Scenario 3", async ({ page }) => {
     await page.getByRole("link", { name: "Input Form Submit" }).click();
     await page.getByRole("button", { name: "Submit" }).click();
     await page.getByPlaceholder("Name", { exact: true }).fill(data.USER_NAME);

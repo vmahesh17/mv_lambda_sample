@@ -22,7 +22,6 @@ testRunnerCommand: npm test -- $test
 
 jobLabel: [playwright-mv, win, autosplit]
 
- 
 mergeArtifacts: true
     
 report: true

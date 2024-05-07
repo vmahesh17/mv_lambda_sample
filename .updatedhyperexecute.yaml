@@ -1,7 +1,8 @@
 version: "0.1"
 user: vemula.mahesh
 key: kJ3LzkX4aU6EN212myd3eBpoqOZDuiooLxmi9sHIoZDwFnEkG2
-testSuites: []
+matrix: {files: [LambdaAssignmentTest.spec.ts], os: [win]}
+testSuites: [npm test -- $files]
 pre: [npm install, npx playwright install]
 preDirectives:
     commands: [npm install, npx playwright install]
@@ -15,33 +16,21 @@ postDirectives:
 jobLabel:
     - playwright-mv
     - win
-    - autosplit
-runson: win
-autosplit: true
-concurrency: 1
-testDiscovery:
-    autosubset: true
-    command: grep -lr 'test' tests
-    mode: dynamic
-    type: raw
-testRunnerCommand: npm test -- $test
-globalTimeout: 90
+    - matrix
+runson: ${matrix.os}
 tunnelOpts:
     testsPerTunnel: 10
-testSuiteTimeout: 90
-testSuiteStep: 90
 cacheDirectories:
     - node_modules
 cacheKey: '{{ checksum "package-lock.json" }}'
-maxRetries: 1
-jobID: f3ad997b-7b60-4ffe-816f-c6d0c409ddf6
+jobID: 80ac1cdb-8047-4c81-ba0b-645359e29180
 mergeArtifacts: true
 codeDirectory: mv_lambda_sample
 report: true
 partialReports:
     type: html
     location: Report
-    frameworkName: ""
+    frameworkName: extent
     email:
         to: []
         metaInfo: []

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "run": "npx playwright test -- headed"
+    "run": "npx playwright test --config=./playwright.config.ts"
   },
   "keywords": [],
   "author": "",
