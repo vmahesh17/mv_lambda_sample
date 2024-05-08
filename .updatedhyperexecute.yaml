@@ -1,11 +1,10 @@
 version: "0.1"
-user: vemula.mahesh
-key: kJ3LzkX4aU6EN212myd3eBpoqOZDuiooLxmi9sHIoZDwFnEkG2
-matrix: {files: [LambdaAssignmentTest.spec.ts], os: [win]}
-testSuites: [npm test -- $files]
-pre: [npm install, npx playwright install]
+user: kalesab.imran
+key: 6qnna3MiJv4FeOPHvDJy675JrvHFw2evWDWEVo23bC02g95exd
+testSuites: []
+pre: [yarn add @yarnpkg/core, yarn --version, yarn install, yarn playwright install]
 preDirectives:
-    commands: [npm install, npx playwright install]
+    commands: [yarn add @yarnpkg/core, yarn --version, yarn install, yarn playwright install]
     maxRetries: 0
     shell: ""
     workingDirectory: ""
@@ -13,29 +12,26 @@ postDirectives:
     commands: []
     shell: ""
     workingDirectory: ""
-jobLabel:
-    - playwright-mv
-    - win
-    - matrix
-runson: ${matrix.os}
+runson: win
+autosplit: true
+concurrency: 3
+testDiscovery:
+    autosubset: true
+    command: grep -lr 'test' tests
+    mode: dynamic
+    type: raw
+testRunnerCommand: yarn playwright test $test
+globalTimeout: 90
 tunnelOpts:
     testsPerTunnel: 10
+testSuiteTimeout: 90
+testSuiteStep: 90
 cacheDirectories:
     - node_modules
-cacheKey: '{{ checksum "package-lock.json" }}'
-jobID: 80ac1cdb-8047-4c81-ba0b-645359e29180
-mergeArtifacts: true
+cacheKey: '{{ checksum "yarn.lock" }}'
+maxRetries: 2
+jobID: ac5e206f-e073-4361-8da3-aef8f8a42daf
 codeDirectory: mv_lambda_sample
-report: true
-partialReports:
-    type: html
-    location: Report
-    frameworkName: extent
-    email:
-        to: []
-        metaInfo: []
-        linkValidity: 0
-    configPath: ""
 framework:
     name: ""
     flags: []
@@ -89,7 +85,7 @@ betaFeature:
     setPartiallyCompletedAsCompleted: false
 testType: playwright
 combineTasksInMatrixMode: false
-captureScreenRecordingForScenarios: true
+captureScreenRecordingForScenarios: false
 maxRetriesPreSteps: 0
 triggerMode: false
 sourcePayload:

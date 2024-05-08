@@ -36,12 +36,12 @@ const config: PlaywrightTestConfig = {
     //     viewport: { width: 1280, height: 720 },
     //   },
     // },
-    {
-      name: "pw-webkit:latest:Windows 10@lambdatest",
-      use: {
-        viewport: { width: 1920, height: 1080 },
-      },
-    },
+    // {
+    //   name: "pw-webkit:latest:Windows 10@lambdatest",
+    //   use: {
+    //     viewport: { width: 1920, height: 1080 },
+    //   },
+    // },
     // Config for running tests in local
     // {
     //   name: "chrome",

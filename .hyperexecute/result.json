@@ -1,0 +1,113 @@
+{
+    "id": "343202d7-3f07-4b4d-a009-2aef27dcafc6",
+    "created_at": "2024-05-08T14:54:11Z",
+    "update_at": "2024-05-08T14:55:01Z",
+    "global_timeout": 90,
+    "tunnel_name": "",
+    "start_time": "2024-05-08T14:54:17Z",
+    "end_time": "2024-05-08T14:55:01Z",
+    "summary": {
+        "total_time": 44000000000,
+        "execution_time": 44000000000,
+        "total_tasks": 2,
+        "build_time_consumed": 84000000000,
+        "jobTestExecutionTime": "15s",
+        "failed_tasks": 2,
+        "total_stage_info": {
+            "prerun": {
+                "StageFailedPercent": 0,
+                "StagePassPercent": 100,
+                "TotalStage": 2
+            },
+            "scenario": {
+                "StageFailedPercent": 100,
+                "StagePassPercent": 0,
+                "TotalStage": 2
+            }
+        },
+        "status": "failed",
+        "job_link": "https://hyperexecute.lambdatest.com/hyperexecute/task?jobId=343202d7-3f07-4b4d-a009-2aef27dcafc6"
+    },
+    "tasks": [
+        {
+            "id": "5e5cfb92-6d4e-4fbc-85aa-7ebf0f4f8ff1",
+            "os": "win",
+            "status": "failed",
+            "remark": "error in running test suites - step 1 - exit status 1",
+            "debug": false,
+            "created_at": "2024-05-08T14:54:16Z",
+            "update_at": "2024-05-08T14:55:01Z",
+            "start_time": "2024-05-08T14:54:17Z",
+            "end_time": "2024-05-08T14:55:01Z",
+            "group_number": 1,
+            "stages": [
+                {
+                    "id": "77d1ab4b-bcad-48a1-8705-e9c3f52754d0",
+                    "type": "prerun",
+                    "status": "completed",
+                    "name": "pre",
+                    "iteration": 0,
+                    "link": "pre.log",
+                    "created_at": "2024-05-08T14:54:18Z",
+                    "started_at": "2024-05-08T14:54:18Z",
+                    "updated_at": "2024-05-08T14:54:38Z",
+                    "order": 2,
+                    "task_number": 0
+                },
+                {
+                    "id": "7f773b8a-fa51-4521-93df-0bed2f341093",
+                    "type": "scenario",
+                    "status": "failed",
+                    "name": "npx test -- LambdaAssignmentTest.spec.ts",
+                    "iteration": 0,
+                    "link": "command.1.0.log",
+                    "created_at": "2024-05-08T14:54:38Z",
+                    "started_at": "2024-05-08T14:54:46Z",
+                    "updated_at": "2024-05-08T14:55:01Z",
+                    "order": 3,
+                    "task_number": 0
+                }
+            ]
+        },
+        {
+            "id": "ad664783-23c3-4d44-b8b2-551ff378ca57",
+            "os": "linux",
+            "status": "failed",
+            "remark": "error in running test suites - step 1 - exit status 1",
+            "debug": false,
+            "created_at": "2024-05-08T14:54:16Z",
+            "update_at": "2024-05-08T14:54:58Z",
+            "start_time": "2024-05-08T14:54:18Z",
+            "end_time": "2024-05-08T14:54:58Z",
+            "group_number": 2,
+            "stages": [
+                {
+                    "id": "329bece2-17d1-45c0-97fe-37f4361bf852",
+                    "type": "prerun",
+                    "status": "completed",
+                    "name": "pre",
+                    "iteration": 0,
+                    "link": "pre.log",
+                    "created_at": "2024-05-08T14:54:21Z",
+                    "started_at": "2024-05-08T14:54:21Z",
+                    "updated_at": "2024-05-08T14:54:43Z",
+                    "order": 2,
+                    "task_number": 0
+                },
+                {
+                    "id": "cdabcf1b-dfb2-4d6e-9b81-9dfbca585dc6",
+                    "type": "scenario",
+                    "status": "failed",
+                    "name": "npx test -- LambdaAssignmentTest.spec.ts",
+                    "iteration": 0,
+                    "link": "command.1.0.log",
+                    "created_at": "2024-05-08T14:54:43Z",
+                    "started_at": "2024-05-08T14:54:51Z",
+                    "updated_at": "2024-05-08T14:54:58Z",
+                    "order": 3,
+                    "task_number": 0
+                }
+            ]
+        }
+    ]
+}

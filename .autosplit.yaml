@@ -1,0 +1,30 @@
+---
+version: "0.1"
+globalTimeout: 90
+testSuiteTimeout: 90
+testSuiteStep: 90
+runson: win
+autosplit: true
+retryOnFailure: false
+maxRetries: 2
+concurrency: 3
+
+env:
+  # LT_USERNAME: ${{ .secrets.LT_USERNAME }}
+  # LT_ACCESS_KEY: ${{ .secrets.LT_ACCESS_KEY }}
+
+pre:
+  - yarn add @yarnpkg/core
+  - yarn --version
+  - yarn install
+  - yarn playwright install
+
+cacheKey: '{{ checksum "yarn.lock" }}'
+cacheDirectories:
+  - node_modules
+testDiscovery:
+  type: raw
+  mode: dynamic
+  command: grep -lr 'test' tests
+
+testRunnerCommand: yarn playwright test $test
