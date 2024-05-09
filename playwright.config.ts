@@ -6,7 +6,12 @@ const config: PlaywrightTestConfig = {
   testDir: "tests",
   // testMatch: ["tests\loginTest.spec.ts"],
   timeout: 60000,
-  use: {},
+  reporter: [['html', { outputFolder: 'reports' }]],
+  use: {
+
+
+
+  },
   projects: [
     // -- LambdaTest Config --
     // name in the format: browserName:browserVersion:platform@lambdatest

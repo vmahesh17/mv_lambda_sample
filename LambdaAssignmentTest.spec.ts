@@ -1,7 +1,7 @@
 import { expect } from "@playwright/test";
 // import test from "../lambdatest-setup";
 import test from '@playwright/test'
-import {data} from '../data'
+import {data} from './data'
 
 test.describe("PlayWright Assignment Test Scenarios", async () => {
   test.beforeEach(async ({ page }) => {

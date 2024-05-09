@@ -20,3 +20,13 @@ Project to integrate Playwright typescript with Lambdatest service
 
 4. To Run playwright tests, use the below command
     npx playwright test
+
+5. To install HyperExecute CLI, run the below commands
+    wget https://downloads.lambdatest.com/hyperexecute/darwin/hyperexecute
+   #after successful installation hyperexecute file will be downloaded can seen under the project
+   
+6. Change user permissions using below command to set hyperexecute
+    chmod u+x hyperexecute
+
+7. Run the below command to run the test suites against hyperexecute
+    ./hyperexecute --user=$LT_USERNAME --key=$LT_ACCESS_KEY --config .autosplit.yaml --download-artifact --force-clean-artifacts
